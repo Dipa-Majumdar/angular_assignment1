@@ -1,6 +1,101 @@
+<!DOCTYPE html>
 <html>
-    <h1>
-    Hello World!
-    </h1>
-    <h2>Hello Again!</h2>
+<head>
+<title>Assignment 3</title>
+
+
+</head>
+<body>
+
+<form  class="pure-form" >
+  First name:<br>
+  <input type="text"  id="firstname" >
+  <br><br>
+  <script>
+  var nameInput = document.getElementById('firstname');
+
+document.querySelector('form.pure-form').addEventListener('submit', function (e) {
+
+    //prevent the normal submission of the form
+    e.preventDefault();
+
+    console.log(nameInput.value);    
+});
+  </script>
+  Last name:<br>
+  <input type="text" id="lastname" >
+  <br><br>
+   Email:<br>
+  <input type="email" id="emailAddress" name="emailAddress">
+   <br><br>
+Contact no.:<br>
+   <input type="tel" id="contactno" name="contactno">
+<br>
+<br>
+Address:<br>
+<textarea rows="4" cols="50"></textarea>
+<br>
+<br>
+Username:<br>
+<input type="text" id="username" name="username"><br><br>
+Password:<br>
+
+<input type="password" name="psw"><br>
+<br>
+Gender:<br>
+<label><input type="radio" name="gender" value="male">Male</label><br>
+<label><input type="radio" name="gender" value="female">Female</label><br>
+<br>
+Qualification:<br>
+<select id="selectQua" name="qualification">
+<script>
+ var qualification = new Array("Under-graduation", "Graduation", "Post-graduation" );
+        for(i=0; i<3; i++) 
+		{  
+            document.write('<option value="' + qualification[i] + ' " >' + qualification[i] + '</option>');
+        }
+</script>
+
+
+</select>
+<br>
+<br>
+Experience:<br>
+<select id ="selectNumber" name="Experience">
+<option>--select--</option>
+<script>
+ var experiences = new Array("1", "2", "3", "4", "5" );
+        for(i=0; i<experiences.length; i++) 
+		{  
+            document.write('<option value="' + experiences[i] + ' " >' + experiences[i] + '</option>');
+        }
+</script>
+</select><br>
+<br>
+Coding Languages:<br>
+
+<script>
+var CodingLanguage=new Array(
+{language: 'C/C++' , isEnabled: true},
+{language: 'JAVA', isEnabled: true},
+{language: 'C#', isEnabled: false},
+{language: 'PHP', isEnabled: false},
+{language: 'Python', isEnabled: false}
+);
+var i;
+for(i=0;i<5;i++){
+if(CodingLanguage[i].isEnabled){
+document.write('<label><input type="checkbox"  checked>' + CodingLanguage[i].language + '</input></label><br>' );}
+else
+{
+document.write('<label><input type="checkbox" >' + CodingLanguage[i].language + '</input></label><br>' );
+}
+}
+</script>
+
+<br>
+<input type="submit" value="Submit"  ><br><br>
+
+</form> 
+</body>
 </html>
